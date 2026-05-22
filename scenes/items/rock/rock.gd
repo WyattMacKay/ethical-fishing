@@ -9,18 +9,17 @@ extends Draggable2D
 @export var mover : Node2D
 @export var hitbox : CollisionShape2D
 
-var ready_to_hit : bool
-
 func _ready() -> void:
 	super._ready()
 	shadow.self_modulate = Color(0, 0, 0, shadow_opacity)
-	ready_to_hit = true
+	ready_to_use = true
 	hitbox.disabled = true
+	shadow.visible = false
 
 func use() -> void:
-	if(!ready_to_hit):
+	if(!ready_to_use):
 		return
-	ready_to_hit = false
+	ready_to_use = false
 	var target_pos := shadow.position
 	var target_color := shadow.self_modulate
 	target_color.a = 1
@@ -38,11 +37,14 @@ func tween_back() -> void:
 	tween.set_parallel()
 	tween.tween_property(mover, "position", Vector2.ZERO, use_speed)
 	tween.tween_property(shadow, "self_modulate", Color(0, 0, 0, shadow_opacity), use_speed)
-	tween.finished.connect(set_ready)
+	tween.finished.connect(finished_use)
 
 func _physics_process(delta) -> void:
-	if(ready_to_hit):
+	if(ready_to_use):
 		super._physics_process(delta)
 
-func set_ready() -> void:
-	ready_to_hit = true
+func _on_picked_up() -> void:
+	shadow.visible = true
+
+func _on_released() -> void:
+	shadow.visible = false

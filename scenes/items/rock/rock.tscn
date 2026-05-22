@@ -43,4 +43,6 @@ shape = SubResource("RectangleShape2D_e0m7q")
 [node name="RockSprite" type="Sprite2D" parent="Movers" unique_id=1424701910]
 texture = ExtResource("1_b3kve")
 
+[connection signal="picked_up" from="." to="." method="_on_picked_up"]
+[connection signal="released" from="." to="." method="_on_released"]
 [connection signal="input_event" from="ClickBox" to="." method="_on_click_box_input_event"]
