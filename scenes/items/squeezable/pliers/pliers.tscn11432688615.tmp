@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bsrtyniwgkmyb"]
+
+[ext_resource type="Script" uid="uid://di8muxmvkstju" path="res://pliers.gd" id="1_jx2oa"]
+[ext_resource type="Texture2D" uid="uid://cx3sn2ycicjcl" path="res://scenes/items/pliers/pliers.png" id="2_fnlm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnlm3"]
+size = Vector2(303, 273)
+
+[node name="Pliers" type="Node2D" unique_id=1934009652 node_paths=PackedStringArray("left", "right")]
+rotation = -1.5707964
+script = ExtResource("1_jx2oa")
+left = NodePath("Left")
+right = NodePath("Right")
+pickup_rotation = 90.0
+
+[node name="Right" type="Sprite2D" parent="." unique_id=745096725]
+rotation = 1.3089969
+texture = ExtResource("2_fnlm3")
+offset = Vector2(27, 151)
+
+[node name="Left" type="Sprite2D" parent="." unique_id=402097805]
+rotation = 1.8325958
+texture = ExtResource("2_fnlm3")
+offset = Vector2(-26, 151)
+flip_h = true
+
+[node name="Clickable" type="Area2D" parent="." unique_id=1241087773]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=780192628]
+position = Vector2(-208.5, 0.49999088)
+shape = SubResource("RectangleShape2D_fnlm3")
+
+[connection signal="input_event" from="Clickable" to="." method="_on_click_box_input_event"]

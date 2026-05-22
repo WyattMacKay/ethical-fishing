@@ -30,6 +30,7 @@ use_item={
 
 [layer_names]
 
+2d_render/layer_3="Hook"
 2d_physics/layer_2="Click"
 
 [physics]

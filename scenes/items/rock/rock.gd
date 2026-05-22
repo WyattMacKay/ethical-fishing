@@ -9,6 +9,8 @@ extends Draggable2D
 @export var mover : Node2D
 @export var hitbox : CollisionShape2D
 
+var queue_release := false
+
 func _ready() -> void:
 	super._ready()
 	shadow.self_modulate = Color(0, 0, 0, shadow_opacity)
@@ -20,6 +22,7 @@ func use() -> void:
 	if(!ready_to_use):
 		return
 	ready_to_use = false
+	queue_release = false
 	var target_pos := shadow.position
 	var target_color := shadow.self_modulate
 	target_color.a = 1
@@ -39,9 +42,16 @@ func tween_back() -> void:
 	tween.tween_property(shadow, "self_modulate", Color(0, 0, 0, shadow_opacity), use_speed)
 	tween.finished.connect(finished_use)
 
+func finished_use() -> void:
+	if(queue_release):
+		let_go()
+	super.finished_use()
+
 func _physics_process(delta) -> void:
 	if(ready_to_use):
 		super._physics_process(delta)
+	elif(Input.is_action_just_released("mouse_click")):
+		queue_release = true
 
 func _on_picked_up() -> void:
 	shadow.visible = true

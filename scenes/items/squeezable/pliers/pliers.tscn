@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bsrtyniwgkmyb"]
+
+[ext_resource type="Script" uid="uid://c7jblipmhksba" path="res://scenes/items/squeezable/pliers/pliers.gd" id="1_f8nt3"]
+[ext_resource type="Texture2D" uid="uid://cx3sn2ycicjcl" path="res://scenes/items/squeezable/pliers/pliers.png" id="2_fnlm3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8nt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnlm3"]
+size = Vector2(457.33557, 273)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fnlm3"]
+radius = 47.24
+
+[node name="Pliers" type="Node2D" unique_id=337974860 node_paths=PackedStringArray("pinpoint", "interactor_hitbox", "left", "right")]
+script = ExtResource("1_f8nt3")
+pinpoint = NodePath("ConnectionCollider")
+interactor_hitbox = NodePath("Interactor/CollisionShape2D")
+left = NodePath("Left")
+right = NodePath("Right")
+pickup_rotation = 120.0
+metadata/_custom_type_script = "uid://di8muxmvkstju"
+
+[node name="ConnectionCollider" type="StaticBody2D" parent="." unique_id=407293757]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionCollider" unique_id=1870601514]
+position = Vector2(0, -270)
+shape = SubResource("CircleShape2D_f8nt3")
+
+[node name="Clickable" type="Area2D" parent="." unique_id=1241087773]
+position = Vector2(-0.34571838, -207.66444)
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=780192628]
+position = Vector2(-131.33221, 0.49999088)
+shape = SubResource("RectangleShape2D_fnlm3")
+
+[node name="Interactor" type="Area2D" parent="." unique_id=820190603]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor" unique_id=249331748]
+position = Vector2(0, -257)
+shape = SubResource("CircleShape2D_fnlm3")
+
+[node name="Right" type="Sprite2D" parent="." unique_id=745096725]
+position = Vector2(-0.34574902, -207.66449)
+rotation = -0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_fnlm3")
+offset = Vector2(27, 151)
+
+[node name="Left" type="Sprite2D" parent="." unique_id=402097805]
+position = Vector2(-0.34574902, -207.66449)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_fnlm3")
+offset = Vector2(-26, 151)
+flip_h = true
+
+[connection signal="input_event" from="Clickable" to="." method="_on_click_box_input_event"]
+[connection signal="input_event" from="Clickable" to="." method="_on_clickable_input_event"]
+[connection signal="body_entered" from="Interactor" to="." method="_on_interactor_body_entered"]
