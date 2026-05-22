@@ -2,6 +2,8 @@
 class_name Draggable2D
 extends Node2D
 
+@export var pickup_rotation := 0.0
+
 var click_started_here: bool = false
 var start_pos: Vector2
 var ready_to_use : bool
@@ -15,6 +17,7 @@ func _ready() -> void:
 func let_go() -> void:
 	click_started_here = false
 	position = start_pos
+	rotation_degrees = 0
 	released.emit()
 
 func finished_use() -> void:
@@ -29,16 +32,16 @@ func move_to_mouse() -> void:
 
 func _physics_process(_delta) -> void:
 	if(click_started_here):
-		if(Input.is_action_just_released("mouse_click")):
-			let_go()
-		
-		elif(Input.is_action_pressed("mouse_click")):
+		if(Input.is_action_pressed("mouse_click")):
 			move_to_mouse()
+		elif(Input.is_action_just_released("mouse_click")):
+			let_go()
 
 func _on_click_box_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
 		if(Input.is_action_just_pressed("mouse_click")):
 			click_started_here = true
+			rotation_degrees = pickup_rotation
 			picked_up.emit()
 		elif(Input.is_action_just_pressed("use_item") and click_started_here):
 			use()

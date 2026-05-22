@@ -14,7 +14,7 @@ height = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkfyu"]
 radius = 37.93
 
-[node name="Hookline" type="Node2D" unique_id=1092524975 node_paths=PackedStringArray("line")]
+[node name="hookline" type="Node2D" unique_id=1092524975 node_paths=PackedStringArray("line")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vo6fg")
 line = NodePath("Line")
@@ -22,7 +22,7 @@ line = NodePath("Line")
 [node name="Line" type="Line2D" parent="." unique_id=2003251680]
 position = Vector2(126.70056, 23)
 scale = Vector2(1.1016042, 1)
-points = PackedVector2Array(-805.8107, 18, -125.89323, 3, -110.46119, -7, -103.19905, -48, -112.27672, -42, -100.47575, -40)
+points = PackedVector2Array(-4091.0344, -443, -125.89323, 3, -110.46119, -7, -103.19905, -48, -112.27672, -42, -100.47575, -40)
 gradient = SubResource("Gradient_bcjdn")
 joint_mode = 2
 begin_cap_mode = 2
@@ -45,6 +45,8 @@ shape = SubResource("CapsuleShape2D_bcjdn")
 
 [node name="Clickbox" type="Area2D" parent="." unique_id=269094191]
 position = Vector2(96.01605, 23)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clickbox" unique_id=1991106633]
 position = Vector2(-96, -23)

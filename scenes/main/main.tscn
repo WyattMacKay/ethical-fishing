@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/salmon/salmon.tscn" id="2_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/hookline.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 
 [node name="Main" type="Node2D" unique_id=118513321]
 
@@ -11,7 +12,7 @@ position = Vector2(576, 324)
 offset = Vector2(0.065, 0)
 
 [node name="Hookline" parent="." unique_id=1092524975 instance=ExtResource("3_k2fmo")]
-position = Vector2(239, 495)
+position = Vector2(235, 493.99997)
 scale = Vector2(0.1656829, 0.1656829)
 
 [node name="Salmon" parent="." unique_id=553638740 instance=ExtResource("2_k2fmo")]
@@ -21,3 +22,8 @@ scale = Vector2(0.39927346, 0.39927346)
 [node name="Rock" parent="." unique_id=1287651196 instance=ExtResource("1_iuonh")]
 position = Vector2(576, 105.00003)
 scale = Vector2(0.5, 0.5)
+
+[node name="Pliers" parent="." unique_id=1934009652 instance=ExtResource("4_l3cfh")]
+position = Vector2(384, 137.00002)
+scale = Vector2(0.32656792, 0.32656792)
+use_speed = 0.25
