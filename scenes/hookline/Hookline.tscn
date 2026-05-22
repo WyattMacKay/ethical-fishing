@@ -1,25 +1,31 @@
 [gd_scene format=3 uid="uid://bgk03v0tjnuhl"]
 
 [ext_resource type="Texture2D" uid="uid://ku6yu1svcjj2" path="res://scenes/hookline/Hook.png" id="1_bcjdn"]
-[ext_resource type="Script" uid="uid://bfkgtociap3on" path="res://scenes/hookline/hookline.gd" id="1_vo6fg"]
+[ext_resource type="Script" uid="uid://bd8oa77hx0ls5" path="res://scenes/hookline/hookline.gd" id="1_vo6fg"]
 
 [sub_resource type="Gradient" id="Gradient_bcjdn"]
 offsets = PackedFloat32Array(0, 0.8238636, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.86898494, 0.8689849, 0.8689849, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcjdn"]
-radius = 12.307297
-height = 50.0
+radius = 1.61
+height = 16.81
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkfyu"]
 radius = 37.93
 
-[node name="hookline" type="Node2D" unique_id=1092524975 node_paths=PackedStringArray("line")]
-scale = Vector2(0.5, 0.5)
+[node name="Hookline" type="RigidBody2D" unique_id=847189055 node_paths=PackedStringArray("line")]
+collision_layer = 5
+collision_mask = 5
+mass = 0.01
+gravity_scale = 0.0
 script = ExtResource("1_vo6fg")
-line = NodePath("Line")
+line = NodePath("Non-body/Line")
 
-[node name="Line" type="Line2D" parent="." unique_id=2003251680]
+[node name="Non-body" type="Node2D" parent="." unique_id=1715416271]
+scale = Vector2(0.1656829, 0.1656829)
+
+[node name="Line" type="Line2D" parent="Non-body" unique_id=2003251680]
 position = Vector2(126.70056, 23)
 scale = Vector2(1.1016042, 1)
 points = PackedVector2Array(-4091.0344, -443, -125.89323, 3, -110.46119, -7, -103.19905, -48, -112.27672, -42, -100.47575, -40)
@@ -30,26 +36,17 @@ end_cap_mode = 2
 sharp_limit = 4.0
 antialiased = true
 
-[node name="Hook" type="Sprite2D" parent="." unique_id=1333252150]
+[node name="Hook" type="Sprite2D" parent="Non-body" unique_id=1333252150]
 position = Vector2(96.01605, 23)
 rotation = -1.5707964
 texture = ExtResource("1_bcjdn")
 
-[node name="Collisionbox" type="RigidBody2D" parent="." unique_id=1708384166]
-position = Vector2(96.01605, 23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisionbox" unique_id=644842901]
-position = Vector2(64, -57.000004)
-rotation = 1.4260033
+[node name="Hook" type="CollisionShape2D" parent="." unique_id=644842901]
+position = Vector2(30.000004, -5.0000005)
+rotation = 1.5434918
 shape = SubResource("CapsuleShape2D_bcjdn")
 
-[node name="Clickbox" type="Area2D" parent="." unique_id=269094191]
-position = Vector2(96.01605, 23)
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickbox" unique_id=1991106633]
-position = Vector2(-96, -23)
+[node name="Handle" type="CollisionShape2D" parent="." unique_id=1991106633]
+position = Vector2(0.0026597977, 0)
+scale = Vector2(0.1656829, 0.1656829)
 shape = SubResource("CircleShape2D_rkfyu")
-
-[connection signal="input_event" from="Clickbox" to="." method="_on_click_box_input_event"]

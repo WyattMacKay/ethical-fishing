@@ -12,8 +12,7 @@ position = Vector2(576, 324)
 offset = Vector2(0.065, 0)
 
 [node name="Hookline" parent="." unique_id=1092524975 instance=ExtResource("3_k2fmo")]
-position = Vector2(235, 493.99997)
-scale = Vector2(0.1656829, 0.1656829)
+position = Vector2(233, 493)
 
 [node name="Salmon" parent="." unique_id=553638740 instance=ExtResource("2_k2fmo")]
 position = Vector2(576.00006, 471)

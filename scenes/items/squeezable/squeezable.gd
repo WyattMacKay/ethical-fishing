@@ -1,3 +1,4 @@
+@abstract
 class_name Squeezable2D
 extends Draggable2D
 
@@ -13,21 +14,23 @@ var tween : Tween
 func _ready() -> void:
 	super._ready()
 
-func use(): 
+func use() -> void: 
 	if tween : tween.kill()
 	tween = create_tween()
 	tween.set_parallel()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(left, "rotation_degrees", 0, use_speed).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(right, "rotation_degrees", 0, use_speed).set_trans(Tween.TRANS_SINE)
+	tween.finished.connect(fully_squeezed)
 
-func unuse():
+func unuse() -> void:
 	if tween : tween.kill()
 	tween = create_tween()
 	tween.set_parallel()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(left, "rotation_degrees", rest_rot, use_speed).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(right, "rotation_degrees", -rest_rot, use_speed).set_trans(Tween.TRANS_SINE)
+	tween.finished.connect(unsqueezed)
 
 func _on_released() -> void:
 	if tween : tween.kill()
@@ -36,3 +39,8 @@ func _on_released() -> void:
 
 func _on_clickable_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if(Input.is_action_just_released("use_item")): unuse()
+
+@abstract
+func fully_squeezed() -> void
+@abstract
+func unsqueezed() -> void
