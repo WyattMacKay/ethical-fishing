@@ -16,6 +16,7 @@ func _ready() -> void:
 	shadow.self_modulate = Color(0, 0, 0, shadow_opacity)
 	ready_to_hit = true
 	hitbox.disabled = true
+	shadow.visible = false
 
 func use() -> void:
 	if(!ready_to_hit):
@@ -46,3 +47,9 @@ func _physics_process(delta) -> void:
 
 func set_ready() -> void:
 	ready_to_hit = true
+
+func _on_picked_up() -> void:
+	shadow.visible = true
+
+func _on_released() -> void:
+	shadow.visible = false
