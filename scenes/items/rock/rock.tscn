@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cb2v1yvu6mwc1"]
+
+[ext_resource type="Script" uid="uid://bb42kcvw3kqn" path="res://scenes/items/rock/rock.gd" id="1_4grot"]
+[ext_resource type="Texture2D" uid="uid://bs7d4xbauh2kd" path="res://scenes/items/rock/Rock.png" id="1_b3kve"]
+[ext_resource type="Texture2D" uid="uid://bu1ms66hvf4mi" path="res://scenes/items/rock/Circle.png" id="2_4grot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co78t"]
+size = Vector2(316, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0m7q"]
+size = Vector2(316, 43)
+
+[node name="Rock" type="Node2D" unique_id=1851804943 node_paths=PackedStringArray("shadow", "mover", "hitbox")]
+script = ExtResource("1_4grot")
+shadow = NodePath("Non-Movers/Shadow")
+mover = NodePath("Movers")
+hitbox = NodePath("Movers/Hitbox/CollisionShape2D")
+
+[node name="ClickBox" type="Area2D" parent="." unique_id=657013219]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickBox" unique_id=743807080]
+shape = SubResource("RectangleShape2D_co78t")
+
+[node name="Non-Movers" type="Node2D" parent="." unique_id=752117264]
+
+[node name="Shadow" type="Sprite2D" parent="Non-Movers" unique_id=1296606411]
+position = Vector2(0, 183.99998)
+scale = Vector2(1.51, 0.47999984)
+texture = ExtResource("2_4grot")
+offset = Vector2(0, 100.00006)
+
+[node name="Movers" type="Node2D" parent="." unique_id=419682329]
+
+[node name="Hitbox" type="Area2D" parent="Movers" unique_id=1290994865]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Movers/Hitbox" unique_id=719882335]
+position = Vector2(0, 65.5)
+shape = SubResource("RectangleShape2D_e0m7q")
+
+[node name="RockSprite" type="Sprite2D" parent="Movers" unique_id=1424701910]
+texture = ExtResource("1_b3kve")
+
+[connection signal="input_event" from="ClickBox" to="." method="_on_click_box_input_event"]
