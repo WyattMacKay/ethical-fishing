@@ -1,28 +1,65 @@
 [gd_scene format=3 uid="uid://dl40sk7w4b7c3"]
 
+[ext_resource type="Script" uid="uid://b4j3fe1b7nkmx" path="res://scenes/utilities/slider/slider.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/salmon/salmon.tscn" id="2_k2fmo"]
-[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/hookline.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://ve1ux1am77xa" path="res://scenes/utilities/slider/slider.tscn" id="2_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
 
 [node name="Main" type="Node2D" unique_id=118513321]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=839156719]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1515834361]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.890776, 16.206585)
+color = Color(0.79607844, 0.7411765, 0.5764706, 1)
+
+[node name="Slider" type="Control" parent="CanvasLayer" unique_id=99740640]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_hujxm")
+speed = 2.0
+tween_trans = 9
+tween_ease = 1
+
+[node name="LayeredImage" type="TextureRect" parent="CanvasLayer/Slider" unique_id=790530684]
+layout_mode = 0
+offset_right = 71.111115
+offset_bottom = 40.0
+scale = Vector2(16.211046, 16.211046)
+texture = ExtResource("5_6q06x")
+expand_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=38482677]
 position = Vector2(576, 324)
 offset = Vector2(0.065, 0)
 
-[node name="Hookline" parent="." unique_id=1092524975 instance=ExtResource("3_k2fmo")]
-position = Vector2(233, 493)
+[node name="Slider" parent="." unique_id=2139514253 instance=ExtResource("2_ow5a4")]
+direction = 2
 
-[node name="Salmon" parent="." unique_id=553638740 instance=ExtResource("2_k2fmo")]
+[node name="Salmon" parent="Slider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
 position = Vector2(576.00006, 471)
 scale = Vector2(0.39927346, 0.39927346)
 
-[node name="Rock" parent="." unique_id=1287651196 instance=ExtResource("1_iuonh")]
+[node name="Hookline" parent="Slider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
+show_behind_parent = true
+position = Vector2(-859.0604, 55.100098)
+scale = Vector2(2.504549, 2.504549)
+
+[node name="Rock" parent="Slider" unique_id=1287651196 instance=ExtResource("1_iuonh")]
 position = Vector2(576, 105.00003)
 scale = Vector2(0.5, 0.5)
 
-[node name="Pliers" parent="." unique_id=1934009652 instance=ExtResource("4_l3cfh")]
-position = Vector2(384, 137.00002)
-scale = Vector2(0.32656792, 0.32656792)
+[node name="Pliers" parent="Slider" unique_id=1934009652 instance=ExtResource("4_l3cfh")]
+position = Vector2(384.00003, 137.00006)
+scale = Vector2(0.3265679, 0.3265679)
 use_speed = 0.25
