@@ -30,6 +30,7 @@ scale = Vector2(0.1656829, 0.1656829)
 position = Vector2(126.70056, 23)
 scale = Vector2(1.1016042, 1)
 points = PackedVector2Array(-4091.0344, -443, -125.89323, 3, -110.46119, -7, -103.19905, -48, -112.27672, -42, -100.47575, -40)
+width = 30.0
 gradient = SubResource("Gradient_bcjdn")
 texture = ExtResource("2_djc2b")
 texture_mode = 1

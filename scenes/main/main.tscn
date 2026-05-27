@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://bfo5au5obqj77" path="res://scenes/measuring_tape/measuring_tape.tscn" id="8_yyfjg"]
 
 [node name="Main" type="Node2D" unique_id=118513321]
 
@@ -63,3 +64,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(384.00003, 137.00006)
 scale = Vector2(0.3265679, 0.3265679)
 use_speed = 0.25
+
+[node name="MeasuringTape" parent="Slider" unique_id=307550821 instance=ExtResource("8_yyfjg")]
+position = Vector2(779.00006, 108)
+scale = Vector2(0.4054026, 0.4054026)
