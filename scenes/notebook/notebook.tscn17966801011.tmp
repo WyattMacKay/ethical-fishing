@@ -12,10 +12,9 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km0ba"]
 
-[node name="Notebook" type="Node2D" unique_id=1823640955 node_paths=PackedStringArray("label_container", "header_label")]
+[node name="Notebook" type="Node2D" unique_id=1823640955 node_paths=PackedStringArray("label_container")]
 script = ExtResource("1_q1l67")
 label_container = NodePath("Panel/TaskContainer")
-header_label = NodePath("CenterContainer/Title")
 label_settings = ExtResource("3_km0ba")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=194413501]

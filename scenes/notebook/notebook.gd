@@ -2,6 +2,7 @@ extends Node2D
 
 @export var active_fish : Fish2D
 @export var label_container : Container
+@export var header_label : Label
 @export var label_settings : LabelSettings
 
 var signals_labels : Dictionary[Signal, Label]
@@ -12,6 +13,7 @@ func _ready() -> void:
 
 func _on_fish_changed(fish : Fish2D) -> void:
 	active_fish = fish
+	header_label.text = fish.species
 	connect_signals()
 
 func connect_signals() -> void:

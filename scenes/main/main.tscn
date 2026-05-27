@@ -70,6 +70,7 @@ use_speed = 0.25
 z_index = -1
 position = Vector2(483, 470)
 scale = Vector2(0.39927346, 0.39927346)
+species = "Atlantic Salmon"
 maximum_size = nan
 
 [node name="Hookline" parent="Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
