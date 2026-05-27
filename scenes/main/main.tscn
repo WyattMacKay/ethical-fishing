@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/salmon/salmon.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ve1ux1am77xa" path="res://scenes/utilities/slider/slider.tscn" id="2_ow5a4"]
-[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://bmfb0a6kif6i" path="res://scenes/hookline/hookline.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bfo5au5obqj77" path="res://scenes/measuring_tape/measuring_tape.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://bym3poy3akvw0" path="res://scenes/notebook/notebook.tscn" id="9_b1x3f"]
 
 [node name="Main" type="Node2D" unique_id=118513321]
 
@@ -44,17 +45,13 @@ expand_mode = 3
 position = Vector2(576, 324)
 offset = Vector2(0.065, 0)
 
+[node name="Notebook" parent="." unique_id=1823640955 instance=ExtResource("9_b1x3f")]
+position = Vector2(1009, 432)
+rotation = -0.10984281
+scale = Vector2(0.6727622, 0.6727622)
+
 [node name="Slider" parent="." unique_id=2139514253 instance=ExtResource("2_ow5a4")]
 direction = 2
-
-[node name="Salmon" parent="Slider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
-position = Vector2(576.00006, 471)
-scale = Vector2(0.39927346, 0.39927346)
-
-[node name="Hookline" parent="Slider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
-show_behind_parent = true
-position = Vector2(-859.0604, 55.100098)
-scale = Vector2(2.504549, 2.504549)
 
 [node name="Rock" parent="Slider" unique_id=1287651196 instance=ExtResource("1_iuonh")]
 position = Vector2(576, 105.00003)
@@ -68,3 +65,13 @@ use_speed = 0.25
 [node name="MeasuringTape" parent="Slider" unique_id=307550821 instance=ExtResource("8_yyfjg")]
 position = Vector2(779.00006, 108)
 scale = Vector2(0.4054026, 0.4054026)
+
+[node name="Salmon" parent="." unique_id=553638740 instance=ExtResource("2_k2fmo")]
+z_index = -1
+position = Vector2(576.00006, 471)
+scale = Vector2(0.39927346, 0.39927346)
+
+[node name="Hookline" parent="Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
+show_behind_parent = true
+position = Vector2(-859.0604, 55.100098)
+scale = Vector2(2.504549, 2.504549)

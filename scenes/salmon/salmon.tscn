@@ -6,11 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0utl"]
 radius = 152.01315
 
-[node name="Salmon" type="Node2D" unique_id=553638740]
+[node name="Salmon" type="Node2D" unique_id=553638740 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_rpv22")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991643904]
-texture = ExtResource("1_81nhv")
+sprite = NodePath("Sprite2D")
 
 [node name="HittableArea" type="Area2D" parent="." unique_id=2023097581]
 
@@ -18,5 +16,8 @@ texture = ExtResource("1_81nhv")
 position = Vector2(-725, 63)
 scale = Vector2(0.5603399, 0.5603399)
 shape = SubResource("CircleShape2D_u0utl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991643904]
+texture = ExtResource("1_81nhv")
 
 [connection signal="area_entered" from="HittableArea" to="." method="_on_hittable_area_area_entered"]

@@ -18,6 +18,9 @@ func create_joint(body1: CollisionObject2D, body2: CollisionObject2D) -> PinJoin
 	pj.angular_limit_upper = 10.0
 	pj.node_a = body1.get_path()
 	pj.node_b = body2.get_path()
+	pj.softness = 0
+	pj.bias = 0.9
+	pj.position = pinpoint.position
 	return pj
 
 func fully_squeezed() -> void:

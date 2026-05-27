@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bgk03v0tjnuhl"]
+[gd_scene format=3 uid="uid://bmfb0a6kif6i"]
 
 [ext_resource type="Texture2D" uid="uid://ku6yu1svcjj2" path="res://scenes/hookline/Hook.png" id="1_bcjdn"]
 [ext_resource type="Script" uid="uid://bd8oa77hx0ls5" path="res://scenes/hookline/hookline.gd" id="1_vo6fg"]
