@@ -53,6 +53,10 @@ scale = Vector2(0.6727622, 0.6727622)
 [node name="Slider" parent="." unique_id=2139514253 instance=ExtResource("2_ow5a4")]
 direction = 2
 
+[node name="MeasuringTape" parent="Slider" unique_id=307550821 instance=ExtResource("8_yyfjg")]
+position = Vector2(779.00006, 108)
+scale = Vector2(0.4054026, 0.4054026)
+
 [node name="Rock" parent="Slider" unique_id=1287651196 instance=ExtResource("1_iuonh")]
 position = Vector2(576, 105.00003)
 scale = Vector2(0.5, 0.5)
@@ -62,14 +66,11 @@ position = Vector2(384.00003, 137.00006)
 scale = Vector2(0.3265679, 0.3265679)
 use_speed = 0.25
 
-[node name="MeasuringTape" parent="Slider" unique_id=307550821 instance=ExtResource("8_yyfjg")]
-position = Vector2(779.00006, 108)
-scale = Vector2(0.4054026, 0.4054026)
-
 [node name="Salmon" parent="." unique_id=553638740 instance=ExtResource("2_k2fmo")]
 z_index = -1
-position = Vector2(576.00006, 471)
+position = Vector2(483, 470)
 scale = Vector2(0.39927346, 0.39927346)
+maximum_size = nan
 
 [node name="Hookline" parent="Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
 show_behind_parent = true

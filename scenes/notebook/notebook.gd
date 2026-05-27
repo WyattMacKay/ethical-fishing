@@ -7,6 +7,7 @@ extends Node2D
 var signals_labels : Dictionary[Signal, Label]
 
 func _ready() -> void:
+	active_fish = Global.current_fish
 	Global.connect("fish_changed", _on_fish_changed)
 
 func _on_fish_changed(fish : Fish2D) -> void:
@@ -21,7 +22,7 @@ func connect_signals() -> void:
 		label.label_settings = label_settings
 		label_container.add_child(label)
 		signals_labels[task.related_signal] = label
-		task.related_signal.connect(task_complete.bind(task.related_signal))
+		task.related_signal.connect(func(..._args : Array): task_complete(task.related_signal))
 
 func task_complete(sig : Signal) -> void:
 	signals_labels[sig].text = "Completed!"
