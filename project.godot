@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://biqkkmkqeq2xh"
 
+[gui]
+
+theme/custom_font="uid://baitw204u6k74"
+
 [input]
 
 mouse_click={
