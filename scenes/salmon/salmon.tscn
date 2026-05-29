@@ -8,7 +8,10 @@ radius = 152.01315
 
 [node name="Salmon" type="Node2D" unique_id=553638740 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_rpv22")
+species = "Atlantic Salmon"
+type = 1
 sprite = NodePath("Sprite2D")
+maximum_size = nan
 
 [node name="HittableArea" type="Area2D" parent="." unique_id=2023097581]
 

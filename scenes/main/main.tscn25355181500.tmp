@@ -63,21 +63,18 @@ position = Vector2(384.00003, 137.00006)
 scale = Vector2(0.3265679, 0.3265679)
 use_speed = 0.25
 
-[node name="FishSlider" type="Node" parent="." unique_id=685616355]
-script = ExtResource("1_hujxm")
-speed = 2.0
-enter_direction = 1
-exit_direction = 1
-exit_ease = 1
-
-[node name="Salmon" parent="FishSlider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
-z_index = -1
+[node name="SalmonSlider" type="Node2D" parent="." unique_id=859444692]
 position = Vector2(483, 470)
-scale = Vector2(0.39927343, 0.39927343)
+scale = Vector2(0.39927346, 0.39927346)
+script = ExtResource("1_hujxm")
+
+[node name="Salmon" parent="SalmonSlider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
 species = "Atlantic Salmon"
 maximum_size = nan
 
-[node name="Hookline" parent="FishSlider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
+[node name="Hookline" parent="SalmonSlider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
 show_behind_parent = true
 position = Vector2(-859.0604, 55.100098)
 scale = Vector2(2.504549, 2.504549)

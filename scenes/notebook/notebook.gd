@@ -14,6 +14,8 @@ func _ready() -> void:
 func _on_fish_changed(fish : Fish2D) -> void:
 	active_fish = fish
 	header_label.text = fish.species
+	for child : Node in label_container.get_children():
+		child.queue_free()
 	connect_signals()
 
 func connect_signals() -> void:
@@ -28,3 +30,9 @@ func connect_signals() -> void:
 
 func task_complete(sig : Signal) -> void:
 	signals_labels[sig].text = "Completed!"
+
+func _on_keep_pressed() -> void:
+	Global.fish_kept()
+
+func _on_release_pressed() -> void:
+	Global.fish_released()

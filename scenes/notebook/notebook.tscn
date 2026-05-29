@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://tjyfkjo6b0sf" path="res://scenes/notebook/notebook.gd" id="1_q1l67"]
 [ext_resource type="FontFile" uid="uid://brky1qy4jyyg7" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Black.ttf" id="2_i8w2w"]
 [ext_resource type="LabelSettings" uid="uid://bcvs0kx6akb4y" path="res://scenes/notebook/Task.tres" id="3_km0ba"]
+[ext_resource type="Texture2D" uid="uid://bjli87xrlm7mo" path="res://scenes/utilities/buttons/blue_waiting.png" id="5_g6sg3"]
+[ext_resource type="Texture2D" uid="uid://cf3pkuieak6ig" path="res://scenes/utilities/buttons/blue_pushed.png" id="6_d3cng"]
+[ext_resource type="Texture2D" uid="uid://c8ea2q4e2jxsm" path="res://scenes/utilities/buttons/blue_hover.png" id="7_3af3q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dxuyj"]
 font = ExtResource("2_i8w2w")
@@ -11,6 +14,9 @@ font_size = 32
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km0ba"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6sg3"]
+font_size = 35
 
 [node name="Notebook" type="Node2D" unique_id=1823640955 node_paths=PackedStringArray("label_container", "header_label")]
 script = ExtResource("1_q1l67")
@@ -53,3 +59,56 @@ offset_right = -27.320007
 offset_bottom = -3359.2861
 size_flags_vertical = 3
 theme_override_constants/separation = 15
+
+[node name="Keep" type="TextureButton" parent="." unique_id=762258645]
+offset_left = -32.0
+offset_top = 47.0
+offset_right = 143.0
+offset_bottom = 147.0
+texture_normal = ExtResource("5_g6sg3")
+texture_pressed = ExtResource("6_d3cng")
+texture_hover = ExtResource("7_3af3q")
+
+[node name="Label" type="Label" parent="Keep" unique_id=761667043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Keep"
+label_settings = SubResource("LabelSettings_g6sg3")
+
+[node name="Release" type="TextureButton" parent="." unique_id=373937453]
+offset_left = -32.0
+offset_top = 153.0
+offset_right = 143.0
+offset_bottom = 253.0
+texture_normal = ExtResource("5_g6sg3")
+texture_pressed = ExtResource("6_d3cng")
+texture_hover = ExtResource("7_3af3q")
+
+[node name="Label" type="Label" parent="Release" unique_id=1704033005]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Release"
+label_settings = SubResource("LabelSettings_g6sg3")
+
+[connection signal="pressed" from="Keep" to="." method="_on_keep_pressed"]
+[connection signal="pressed" from="Release" to="." method="_on_release_pressed"]
