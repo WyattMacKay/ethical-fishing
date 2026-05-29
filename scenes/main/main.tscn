@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b4j3fe1b7nkmx" path="res://scenes/utilities/slider/slider.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
-[ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/salmon/salmon.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/fish/salmon/salmon.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ve1ux1am77xa" path="res://scenes/utilities/slider/slider.tscn" id="2_ow5a4"]
-[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/hookline.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bfo5au5obqj77" path="res://scenes/measuring_tape/measuring_tape.tscn" id="8_yyfjg"]
@@ -74,10 +73,4 @@ exit_ease = 1
 z_index = -1
 position = Vector2(483, 470)
 scale = Vector2(0.39927343, 0.39927343)
-species = "Atlantic Salmon"
 maximum_size = nan
-
-[node name="Hookline" parent="FishSlider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
-show_behind_parent = true
-position = Vector2(-859.0604, 55.100098)
-scale = Vector2(2.504549, 2.504549)

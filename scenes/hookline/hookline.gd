@@ -1,3 +1,4 @@
+class_name Hookline
 extends Node2D
 
 @export var line : Line2D

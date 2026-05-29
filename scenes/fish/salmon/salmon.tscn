@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://vuc7a73ypw48"]
 
-[ext_resource type="Texture2D" uid="uid://dvlem0k3w3hnx" path="res://scenes/salmon/Salmon.png" id="1_81nhv"]
-[ext_resource type="Script" uid="uid://crfru0m1l3bn3" path="res://scenes/salmon/fish.gd" id="1_rpv22"]
+[ext_resource type="Texture2D" uid="uid://dvlem0k3w3hnx" path="res://scenes/fish/salmon/Salmon.png" id="1_81nhv"]
+[ext_resource type="Script" uid="uid://crfru0m1l3bn3" path="res://scenes/fish/fish.gd" id="1_rpv22"]
+[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_kdyha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0utl"]
 radius = 152.01315
@@ -22,5 +23,10 @@ shape = SubResource("CircleShape2D_u0utl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991643904]
 texture = ExtResource("1_81nhv")
+
+[node name="Hookline" parent="." unique_id=847189055 instance=ExtResource("3_kdyha")]
+show_behind_parent = true
+position = Vector2(-859.0604, 55.100098)
+scale = Vector2(2.504549, 2.504549)
 
 [connection signal="area_entered" from="HittableArea" to="." method="_on_hittable_area_area_entered"]

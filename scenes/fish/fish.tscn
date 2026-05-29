@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bkdxrdyv2roap"]
+
+[ext_resource type="Script" uid="uid://crfru0m1l3bn3" path="res://scenes/fish/fish.gd" id="1_tvnxe"]
+[ext_resource type="Texture2D" uid="uid://dvlem0k3w3hnx" path="res://scenes/fish/salmon/Salmon.png" id="2_gebi1"]
+[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_27m5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0utl"]
+radius = 152.01315
+
+[node name="Salmon" type="Node2D" unique_id=553638740 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_tvnxe")
+species = "Atlantic Salmon"
+type = 1
+sprite = NodePath("Sprite2D")
+maximum_size = nan
+
+[node name="HittableArea" type="Area2D" parent="." unique_id=2023097581]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HittableArea" unique_id=264433760]
+position = Vector2(-725, 63)
+scale = Vector2(0.5603399, 0.5603399)
+shape = SubResource("CircleShape2D_u0utl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991643904]
+texture = ExtResource("2_gebi1")
+
+[node name="Hookline" parent="." unique_id=847189055 instance=ExtResource("3_27m5i")]
+show_behind_parent = true
+position = Vector2(-859.0604, 55.100098)
+scale = Vector2(2.504549, 2.504549)
+
+[connection signal="area_entered" from="HittableArea" to="." method="_on_hittable_area_area_entered"]

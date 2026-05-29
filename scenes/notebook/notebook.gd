@@ -29,7 +29,8 @@ func connect_signals() -> void:
 		task.related_signal.connect(func(..._args : Array): task_complete(task.related_signal))
 
 func task_complete(sig : Signal) -> void:
-	signals_labels[sig].text = "Completed!"
+	if signals_labels[sig]:
+		signals_labels[sig].text = "Completed!"
 
 func _on_keep_pressed() -> void:
 	Global.fish_kept()

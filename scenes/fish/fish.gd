@@ -1,7 +1,11 @@
 class_name Fish2D
 extends Node2D
 
-enum FishType {INVASIVE, MUST_RELEASE, KEEPABLE}
+enum FishType {
+	INVASIVE, #(506) 453-3826
+	MUST_RELEASE, 
+	KEEPABLE
+}
 @export var species : String = "Unspecified"
 @export var type : FishType = FishType.INVASIVE
 @export var sprite : Sprite2D

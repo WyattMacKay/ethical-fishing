@@ -52,7 +52,7 @@ func start_tweens(enter : bool = true) -> void:
 		tween.set_trans(trans)
 		var position = children_position[child]
 		if !enter:
-			position += 1000 * signed
+			position += 1000 * get_signed(enter)
 		tween.tween_property(child, get_property(enter), position, speed)
 		var timer = get_tree().create_timer(speed/4)
 		await timer.timeout

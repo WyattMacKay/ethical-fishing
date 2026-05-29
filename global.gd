@@ -7,6 +7,8 @@ enum Direction {
 	RIGHT
 }
 
+@export var hookline : Hookline
+
 const distance_modifier := 1.0/8.0
 var current_fish : Fish2D
 var fish_transform : Transform2D
@@ -27,7 +29,10 @@ func measure_finished(length : float) -> void:
 
 func spawn_fish() -> void:
 	var fish_slider := ObjectSlider.new()
-	var fish_res := load("res://scenes/salmon/salmon.tscn")
+	fish_slider.speed = 2.0
+	fish_slider.enter_direction = Direction.DOWN
+	fish_slider.exit_ease = Tween.EASE_OUT
+	var fish_res := load("res://scenes/fish/salmon/salmon.tscn")
 	var fish : Fish2D = fish_res.instantiate()
 	fish.z_index = -1
 	fish.transform = fish_transform
