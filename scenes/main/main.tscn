@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4j3fe1b7nkmx" path="res://scenes/utilities/slider/slider.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
-[ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/fish/salmon/salmon.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://ck2v5142np4ve" path="res://scenes/fish/salmon/salmon.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ve1ux1am77xa" path="res://scenes/utilities/slider/slider.tscn" id="2_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
@@ -16,9 +16,10 @@ layer = -1
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1515834361]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.890776, 16.206585)
+offset_left = -383.0
+offset_top = -211.0
+offset_right = 1537.0
+offset_bottom = 869.0
 color = Color(0.79607844, 0.7411765, 0.5764706, 1)
 
 [node name="Slider" type="Control" parent="CanvasLayer" unique_id=99740640]
@@ -32,9 +33,11 @@ speed = 2.0
 
 [node name="LayeredImage" type="TextureRect" parent="CanvasLayer/Slider" unique_id=790530684]
 layout_mode = 0
-offset_right = 71.111115
-offset_bottom = 40.0
-scale = Vector2(16.211046, 16.211046)
+offset_left = -296.0
+offset_top = -142.0
+offset_right = -224.88889
+offset_bottom = -102.0
+scale = Vector2(23.926008, 23.926008)
 texture = ExtResource("5_6q06x")
 expand_mode = 3
 

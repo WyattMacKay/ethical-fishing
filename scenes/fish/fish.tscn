@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bkdxrdyv2roap"]
 
 [ext_resource type="Script" uid="uid://crfru0m1l3bn3" path="res://scenes/fish/fish.gd" id="1_tvnxe"]
-[ext_resource type="Texture2D" uid="uid://dvlem0k3w3hnx" path="res://scenes/fish/salmon/Salmon.png" id="2_gebi1"]
 [ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/Hookline.tscn" id="3_27m5i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0utl"]
@@ -22,7 +21,6 @@ scale = Vector2(0.5603399, 0.5603399)
 shape = SubResource("CircleShape2D_u0utl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991643904]
-texture = ExtResource("2_gebi1")
 
 [node name="Hookline" parent="." unique_id=847189055 instance=ExtResource("3_27m5i")]
 show_behind_parent = true

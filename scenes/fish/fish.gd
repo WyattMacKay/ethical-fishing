@@ -1,6 +1,7 @@
 class_name Fish2D
 extends Node2D
 
+# Brook trout - Min: 10cm, Max: 30. Limit 5. 2 of 5 may exceed max size
 enum FishType {
 	INVASIVE, #(506) 453-3826
 	MUST_RELEASE, 

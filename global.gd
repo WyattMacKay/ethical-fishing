@@ -8,6 +8,8 @@ enum Direction {
 }
 
 @export var hookline : Hookline
+var fish_res := [preload("res://scenes/fish/salmon/salmon.tscn"), 
+				preload("res://scenes/fish/chain-pickerel/chain_pickerel.tscn")]
 
 const distance_modifier := 1.0/8.0
 var current_fish : Fish2D
@@ -32,8 +34,8 @@ func spawn_fish() -> void:
 	fish_slider.speed = 2.0
 	fish_slider.enter_direction = Direction.DOWN
 	fish_slider.exit_ease = Tween.EASE_OUT
-	var fish_res := load("res://scenes/fish/salmon/salmon.tscn")
-	var fish : Fish2D = fish_res.instantiate()
+	var fish_res_index = randi() % fish_res.size() - 1
+	var fish : Fish2D = fish_res[fish_res_index].instantiate()
 	fish.z_index = -1
 	fish.transform = fish_transform
 	fish_slider.add_child(fish)
