@@ -33,7 +33,7 @@ func set_background(canvas : CanvasLayer) -> void:
 
 func measure_finished(length : float) -> void:
 	var diff = abs(length - current_fish.get_length())
-	if(diff < 5.0):
+	if(diff < (current_fish.get_length() * 0.05)):
 		measured.emit(length)
 
 func spawn_fish() -> void:
