@@ -22,13 +22,14 @@ offset_left = -374.0
 offset_top = -179.0
 offset_right = 1546.0
 offset_bottom = 901.0
+pivot_offset = Vector2(950, 503)
 color = Color(0.79607844, 0.7411765, 0.5764706, 1)
 
 [node name="Slider" type="Control" parent="Background" unique_id=99740640]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1140.0
+offset_bottom = 400.0
 mouse_filter = 2
 script = ExtResource("1_hujxm")
 speed = 2.0

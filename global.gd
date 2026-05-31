@@ -50,11 +50,14 @@ func spawn_fish() -> void:
 	if sibling == self:
 		sibling = get_parent().get_child(0)
 	sibling.add_child(fish_slider)
-	set_zoom(fish)
+	call_deferred("set_zoom", fish)
 
 func set_zoom(fish : Fish2D) -> void:
 	var scale_mod := default_zoom / fish.average_species_size
-	background.scale = Vector2(scale_mod, scale_mod)
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(background, "scale", Vector2(scale_mod, scale_mod), 1.0)
 
 func fish_kept() -> void:
 	exit_fish_slider(Global.Direction.RIGHT)
