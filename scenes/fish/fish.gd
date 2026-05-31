@@ -12,10 +12,11 @@ enum FishType {
 @export var sprite : Sprite2D
 @export var minimum_size : float = 50.0
 @export var maximum_size : float = NAN
+@export var average_species_size : float = 75
+@export var size_modifier : float = 1.0 / 8.0
 
 func _ready() -> void:
 	Global.set_fish(self)
-
 signal died()
 signal hook_removed()
 

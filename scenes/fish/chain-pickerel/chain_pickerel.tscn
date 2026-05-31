@@ -4,14 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dswvjrbdh7yv0" path="res://assets/chain-pickerel.png" id="2_nbtrm"]
 
 [node name="ChainPickerel" unique_id=553638740 instance=ExtResource("1_bfhs5")]
+scale = Vector2(0.7, 0.7)
+species = "Chain Pickerel"
 maximum_size = nan
+average_species_size = 22.0
+size_modifier = 0.03
 
 [node name="HittableArea" parent="." index="0" unique_id=2023097581]
 position = Vector2(502.06042, -61)
 
 [node name="Sprite2D" parent="." index="1" unique_id=1991643904]
 position = Vector2(-4.5, -1.5)
+scale = Vector2(1.4544016, 1.4544016)
 texture = ExtResource("2_nbtrm")
 
 [node name="Hookline" parent="." index="2" unique_id=847189055]
-position = Vector2(-357, -5.8999023)
+position = Vector2(-496.42212, 13.356648)

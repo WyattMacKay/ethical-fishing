@@ -7,6 +7,7 @@
 radius = 152.01315
 
 [node name="Salmon" type="Node2D" unique_id=553638740 node_paths=PackedStringArray("sprite")]
+scale = Vector2(0.39927343, 0.39927343)
 script = ExtResource("1_tvnxe")
 species = "Atlantic Salmon"
 type = 1
