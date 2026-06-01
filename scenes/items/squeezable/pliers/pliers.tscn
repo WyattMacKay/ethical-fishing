@@ -21,11 +21,11 @@ pickup_rotation = 120.0
 metadata/_custom_type_script = "uid://di8muxmvkstju"
 
 [node name="ConnectionCollider" type="StaticBody2D" parent="." unique_id=407293757]
+position = Vector2(0, -270)
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionCollider" unique_id=1870601514]
-position = Vector2(0, -270)
 shape = SubResource("CircleShape2D_f8nt3")
 
 [node name="Clickable" type="Area2D" parent="." unique_id=1241087773]
@@ -39,11 +39,11 @@ position = Vector2(-131.33221, 0.49999088)
 shape = SubResource("RectangleShape2D_fnlm3")
 
 [node name="Interactor" type="Area2D" parent="." unique_id=820190603]
+position = Vector2(0, -270)
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor" unique_id=249331748]
-position = Vector2(0, -257)
 shape = SubResource("CircleShape2D_fnlm3")
 
 [node name="Right" type="Sprite2D" parent="." unique_id=745096725]
@@ -61,6 +61,6 @@ texture = ExtResource("2_fnlm3")
 offset = Vector2(-26, 151)
 flip_h = true
 
-[connection signal="input_event" from="Clickable" to="." method="_on_click_box_input_event"]
 [connection signal="input_event" from="Clickable" to="." method="_on_clickable_input_event"]
+[connection signal="input_event" from="Clickable" to="." method="_on_click_box_input_event"]
 [connection signal="body_entered" from="Interactor" to="." method="_on_interactor_body_entered"]

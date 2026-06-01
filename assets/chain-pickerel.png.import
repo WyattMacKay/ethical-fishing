@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlem0k3w3hnx"
-path="res://.godot/imported/Salmon.png-2fcf080bdd5962a9c4e15ebb6ee61270.ctex"
+uid="uid://dswvjrbdh7yv0"
+path="res://.godot/imported/chain-pickerel.png-1441432c04834a1ca5814d129aacba06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/salmon/Salmon.png"
-dest_files=["res://.godot/imported/Salmon.png-2fcf080bdd5962a9c4e15ebb6ee61270.ctex"]
+source_file="res://assets/chain-pickerel.png"
+dest_files=["res://.godot/imported/chain-pickerel.png-1441432c04834a1ca5814d129aacba06.ctex"]
 
 [params]
 

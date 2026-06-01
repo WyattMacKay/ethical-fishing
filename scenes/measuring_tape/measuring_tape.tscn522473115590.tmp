@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bfo5au5obqj77"]
+
+[ext_resource type="Script" uid="uid://bog6n1o8t6l8f" path="res://scenes/measuring_tape/measuring_tape.gd" id="1_03gnu"]
+[ext_resource type="Texture2D" uid="uid://dvwb0adptalgx" path="res://scenes/measuring_tape/measurer.png" id="2_ka0h4"]
+[ext_resource type="FontFile" uid="uid://dwxeqgmrlx634" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf" id="3_xcpfk"]
+[ext_resource type="Texture2D" uid="uid://c5hyc20wi1kaw" path="res://scenes/measuring_tape/TapeNotch.png" id="4_1lp1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lp1b"]
+size = Vector2(374, 276)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ka0h4"]
+font = ExtResource("3_xcpfk")
+font_size = 62
+font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(1, 1, 1, 0.05490196)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xcpfk"]
+font = ExtResource("3_xcpfk")
+font_size = 32
+font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(1, 1, 1, 0.05490196)
+
+[node name="MeasuringTape" type="Node2D" unique_id=307550821 node_paths=PackedStringArray("notch", "distance_label", "line", "line_begin", "line_end")]
+script = ExtResource("1_03gnu")
+notch = NodePath("Notch")
+distance_label = NodePath("Measurer/DistLabel")
+line = NodePath("Line2D")
+line_begin = NodePath("Measurer/Marker2D")
+line_end = NodePath("Notch/Marker2D")
+tween_speed = null
+pickup_rotation = null
+
+[node name="Clickable" type="Area2D" parent="." unique_id=472813349]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable" unique_id=1462558287]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1lp1b")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1924377236]
+position = Vector2(-1, -3)
+points = PackedVector2Array(-193, 109, -163, 109)
+width = 20.0
+default_color = Color(1, 1, 0, 1)
+antialiased = true
+
+[node name="Measurer" type="Node2D" parent="." unique_id=933510545]
+
+[node name="Measurer" type="Sprite2D" parent="Measurer" unique_id=728399802]
+texture = ExtResource("2_ka0h4")
+
+[node name="DistLabel" type="Label" parent="Measurer" unique_id=1117342326]
+offset_left = -76.0
+offset_top = -52.0
+offset_right = 73.0
+offset_bottom = 51.0
+pivot_offset = Vector2(36, 52)
+text = "0.00"
+label_settings = SubResource("LabelSettings_ka0h4")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="UnitLabel" type="Label" parent="Measurer" unique_id=1562896591]
+offset_left = -74.0
+offset_top = -7.0
+offset_right = 75.0
+offset_bottom = 96.0
+pivot_offset = Vector2(75, 52)
+text = "cm"
+label_settings = SubResource("LabelSettings_xcpfk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Marker2D" type="Marker2D" parent="Measurer" unique_id=183756354]
+position = Vector2(-179, 109)
+
+[node name="Notch" type="Sprite2D" parent="." unique_id=461890746]
+position = Vector2(-199.00002, 89)
+scale = Vector2(0.65748364, 0.65748364)
+texture = ExtResource("4_1lp1b")
+
+[node name="Marker2D" type="Marker2D" parent="Notch" unique_id=2095739356]
+position = Vector2(12.167622, 30.419004)
+
+[connection signal="released" from="." to="." method="_on_released"]
+[connection signal="input_event" from="Clickable" to="." method="_on_click_box_input_event"]

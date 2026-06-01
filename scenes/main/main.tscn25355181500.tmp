@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dl40sk7w4b7c3"]
 
-[ext_resource type="Script" uid="uid://clawitbscwvho" path="res://scenes/main/global_background.gd" id="1_b1x3f"]
 [ext_resource type="Script" uid="uid://b4j3fe1b7nkmx" path="res://scenes/utilities/slider/slider.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cb2v1yvu6mwc1" path="res://scenes/items/rock/rock.tscn" id="1_iuonh"]
-[ext_resource type="PackedScene" uid="uid://ck2v5142np4ve" path="res://scenes/fish/salmon/salmon.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://vuc7a73ypw48" path="res://scenes/salmon/salmon.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ve1ux1am77xa" path="res://scenes/utilities/slider/slider.tscn" id="2_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://bgk03v0tjnuhl" path="res://scenes/hookline/hookline.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://bsrtyniwgkmyb" path="res://scenes/items/squeezable/pliers/pliers.tscn" id="4_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://dirdmdk2bhg6x" path="res://assets/background.png" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bfo5au5obqj77" path="res://scenes/measuring_tape/measuring_tape.tscn" id="8_yyfjg"]
@@ -12,29 +12,26 @@
 
 [node name="Main" type="Node2D" unique_id=118513321]
 
-[node name="Background" type="CanvasLayer" parent="." unique_id=839156719]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=839156719]
 layer = -1
 follow_viewport_enabled = true
-script = ExtResource("1_b1x3f")
 
-[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1515834361]
-offset_left = -374.0
-offset_top = -179.0
-offset_right = 1546.0
-offset_bottom = 901.0
-pivot_offset = Vector2(950, 503)
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1515834361]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.890776, 16.206585)
 color = Color(0.79607844, 0.7411765, 0.5764706, 1)
 
-[node name="Slider" type="Control" parent="Background" unique_id=99740640]
+[node name="Slider" type="Control" parent="CanvasLayer" unique_id=99740640]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1140.0
-offset_bottom = 400.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("1_hujxm")
 speed = 2.0
 
-[node name="LayeredImage" type="TextureRect" parent="Background/Slider" unique_id=790530684]
+[node name="LayeredImage" type="TextureRect" parent="CanvasLayer/Slider" unique_id=790530684]
 layout_mode = 0
 offset_right = 71.111115
 offset_bottom = 40.0
@@ -66,14 +63,18 @@ position = Vector2(384.00003, 137.00006)
 scale = Vector2(0.3265679, 0.3265679)
 use_speed = 0.25
 
-[node name="FishSlider" type="Node" parent="." unique_id=685616355]
-script = ExtResource("1_hujxm")
-speed = 2.0
-enter_direction = 1
-exit_direction = 1
-exit_ease = 1
-
-[node name="Salmon" parent="FishSlider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
-z_index = -1
+[node name="SalmonSlider" type="Node2D" parent="." unique_id=859444692]
 position = Vector2(483, 470)
+scale = Vector2(0.39927346, 0.39927346)
+script = ExtResource("1_hujxm")
+
+[node name="Salmon" parent="SalmonSlider" unique_id=553638740 instance=ExtResource("2_k2fmo")]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+species = "Atlantic Salmon"
 maximum_size = nan
+
+[node name="Hookline" parent="SalmonSlider/Salmon" unique_id=1092524975 instance=ExtResource("3_k2fmo")]
+show_behind_parent = true
+position = Vector2(-859.0604, 55.100098)
+scale = Vector2(2.504549, 2.504549)

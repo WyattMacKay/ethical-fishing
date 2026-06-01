@@ -50,6 +50,7 @@ func _on_click_box_input_event(_viewport: Node, event: InputEvent, _shape_idx: i
 			if pickup_tween : pickup_tween.kill()
 			pickup_tween = create_tween()
 			pickup_tween.tween_property(self, "rotation_degrees", pickup_rotation, tween_speed).set_trans(Tween.TRANS_QUAD)
+			get_parent().move_child(self, get_parent().get_child_count() - 1)
 			picked_up.emit()
 		elif(Input.is_action_just_pressed("use_item") and click_started_here):
 			use()

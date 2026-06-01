@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ck2v5142np4ve"]
+
+[ext_resource type="Texture2D" uid="uid://dvlem0k3w3hnx" path="res://scenes/fish/salmon/Salmon.png" id="1_81nhv"]
+[ext_resource type="PackedScene" uid="uid://bkdxrdyv2roap" path="res://scenes/fish/fish.tscn" id="1_rylht"]
+
+[node name="Salmon" unique_id=553638740 instance=ExtResource("1_rylht")]
+maximum_size = nan
+
+[node name="Sprite2D" parent="." index="1" unique_id=1991643904]
+texture = ExtResource("1_81nhv")

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bcvs0kx6akb4y"]
+
+[ext_resource type="FontFile" uid="uid://djd1ooass6dm7" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-SemiBold.ttf" id="1_ngxws"]
+
+[resource]
+line_spacing = 14.5
+font = ExtResource("1_ngxws")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bym3poy3akvw0"]
+
+[ext_resource type="Texture2D" uid="uid://ciylo3kreg8pe" path="res://scenes/notebook/notbeook.png" id="1_dxuyj"]
+[ext_resource type="Script" uid="uid://tjyfkjo6b0sf" path="res://scenes/notebook/notebook.gd" id="1_q1l67"]
+[ext_resource type="FontFile" uid="uid://brky1qy4jyyg7" path="res://assets/fonts/Source_Code_Pro/static/SourceCodePro-Black.ttf" id="2_i8w2w"]
+[ext_resource type="LabelSettings" uid="uid://bcvs0kx6akb4y" path="res://scenes/notebook/Task.tres" id="3_km0ba"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxuyj"]
+font = ExtResource("2_i8w2w")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km0ba"]
+
+[node name="Notebook" type="Node2D" unique_id=1823640955 node_paths=PackedStringArray("label_container")]
+script = ExtResource("1_q1l67")
+label_container = NodePath("Panel/TaskContainer")
+label_settings = ExtResource("3_km0ba")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=194413501]
+texture = ExtResource("1_dxuyj")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1011690791]
+offset_left = -115.0
+offset_top = -322.0
+offset_right = 173.0
+offset_bottom = -281.0
+pivot_offset = Vector2(144, 21)
+
+[node name="Title" type="Label" parent="CenterContainer" unique_id=987716894]
+layout_mode = 2
+text = "Atlantic Salmon"
+label_settings = SubResource("LabelSettings_dxuyj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1994845174]
+offset_left = -158.0
+offset_top = -272.0
+offset_right = 246.0
+offset_bottom = 281.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_km0ba")
+
+[node name="TaskContainer" type="VBoxContainer" parent="Panel" unique_id=483173635]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.08
+anchor_bottom = 7.0620003
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -27.320007
+offset_bottom = -3359.2861
+size_flags_vertical = 3
+theme_override_constants/separation = 15
